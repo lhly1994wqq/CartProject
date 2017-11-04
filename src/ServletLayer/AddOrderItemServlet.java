@@ -33,7 +33,7 @@ public class AddOrderItemServlet extends HttpServlet {
 		oi.setProduct(product);
 		
 		List<OrderItem> order = (ArrayList<OrderItem>)request.getSession().getAttribute("order");
-		//若从Session中提取的列表为null,类型转换也能成功进行，但是依然为null，所以不必担心
+		//若从Session中提取的列表为null,类型转换也能成功进行，但是依然为null
 		
 		if(null == order){
 			order = new ArrayList<OrderItem>();
