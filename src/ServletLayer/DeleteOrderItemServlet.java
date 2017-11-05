@@ -16,7 +16,7 @@ public class DeleteOrderItemServlet extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
-		int id = Integer.parseInt(request.getParameter("id"));
+		String name = request.getParameter("name");
 		List<OrderItem> list = (ArrayList<OrderItem>) request.getSession().getAttribute("order");
 		
 		if(null == list){
@@ -27,7 +27,7 @@ public class DeleteOrderItemServlet extends HttpServlet {
 		Iterator itor = list.iterator();
 		while(itor.hasNext()){
 			OrderItem oi = (OrderItem) itor.next();
-			if(oi.getId() == id){
+			if(oi.getProduct().getName().equals(name)){
 				itor.remove();
 				break;
 			}

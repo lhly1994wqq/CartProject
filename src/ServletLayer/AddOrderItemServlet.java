@@ -26,7 +26,6 @@ public class AddOrderItemServlet extends HttpServlet {
 		
 		Product product = new ProductDAO().getPorduct(pid);
 		OrderItem oi = new OrderItem();
-		int id = 0;
 		boolean found = false;
 		
 		oi.setNumber(number);
@@ -48,14 +47,10 @@ public class AddOrderItemServlet extends HttpServlet {
 				found = true;
 				break;
 			}
-			id++;
 		}
 		//遍历表，若找到订单项中产品名相同的，则在其原本数量上增加
 		
 		if(!found){
-			oi.setId(id);
-			//若未找到，则给订单项添加id
-			
 			order.add(oi);
 			//将订单项orderitem加入表中
 		}

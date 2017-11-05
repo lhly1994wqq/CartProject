@@ -55,4 +55,12 @@
   <url-pattern>/deleteOrderItem</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  <servlet-name>OrderCreateServlet</servlet-name>
+  <servlet-class>ServletLayer.OrderCreateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>OrderCreateServlet</servlet-name>
+  <url-pattern>/ordercreateServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

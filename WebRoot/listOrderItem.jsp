@@ -20,7 +20,11 @@
             <td><fmt:formatNumber type="number" value="${oi.number }" minFractionDigits="2" /></td>
             <td><fmt:formatNumber type="number" value="${oi.number*oi.product.price}" minFractionDigits="2" /></td>
 
-            <td><a href="deleteOrderItem?id=${oi.id}">删除</a></td>
+            <td><a href="deleteOrderItem?name=${oi.product.name}">删除</a></td>
         </tr>
     </c:forEach>
+    
+    <tr>
+    <td colspan="5" ><a href="ordercreateServlet">生成订单</a></td>
+    </tr>
 </table>
